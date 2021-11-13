@@ -113,11 +113,7 @@
       <Variable x:TypeArguments="x:Int32" Default="1" Name="read_Pages" />
       <Variable x:TypeArguments="x:Int32" Default="1" Name="i" />
       <Variable x:TypeArguments="x:String" Name="Rename_FileName" />
-      <Variable x:TypeArguments="x:Int32" Name="FileCounter">
-        <Variable.Default>
-          <Literal x:TypeArguments="x:Int32" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="x:Int32" Default="0" Name="FileCounter" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -286,7 +282,7 @@
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
                                               <If.Then>
-                                                <ui:IsMatch BuilderPattern="TX\s*\-*\s*\d{1,16}\s*\d{1,16}" DisplayName="Is Match - TX" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_22" Input="[pdf_Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;TX\\s*\\-*\\s*\\d{1,16}\\s*\\d{1,16}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="TX\s*\-*\s*\d{1,16}\s*\d{1,16}" RegexOption="IgnoreCase" Result="[ismatch]">
+                                                <ui:IsMatch BuilderPattern="AL\s*\-*\s*\d{1,16}\s*\d{1,16}" DisplayName="Is Match - TX" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="IsMatch_22" Input="[pdf_Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;AL\\s*\\-*\\s*\\d{1,16}\\s*\\d{1,16}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="AL\s*\-*\s*\d{1,16}\s*\d{1,16}" RegexOption="IgnoreCase" Result="[ismatch]">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -305,12 +301,12 @@
                                               </If.Else>
                                             </If>
                                             <FlowStep.Next>
-                                              <FlowDecision x:Name="__ReferenceID23" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
+                                              <FlowDecision x:Name="__ReferenceID23" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_8">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     <av:Point x:Key="ShapeLocation">670,426.5</av:Point>
-                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                     <av:PointCollection x:Key="TrueConnector">670,470.1 540,470.1</av:PointCollection>
                                                     <av:PointCollection x:Key="FalseConnector">749,470 810,470</av:PointCollection>
                                                   </scg:Dictionary>
@@ -331,7 +327,7 @@
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
                                                       <If.Then>
-                                                        <ui:Matches BuilderPattern="TX\s*\-*\s*\d{1,16}\s*\d{1,16}" DisplayName="Matches-Get Account Number" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Matches_19" Input="[pdf_Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;TX\\s*\\-*\\s*\\d{1,16}\\s*\\d{1,16}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="TX\s*\-*\s*\d{1,16}\s*\d{1,16}" RegexOption="IgnoreCase" Result="[match_Data]">
+                                                        <ui:Matches BuilderPattern="AL\s*\-*\s*\d{1,16}\s*\d{1,16}" DisplayName="Matches-Get Account Number" sap:VirtualizedContainerService.HintSize="333.6,60" sap2010:WorkflowViewState.IdRef="Matches_19" Input="[pdf_Text]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;AL\\s*\\-*\\s*\\d{1,16}\\s*\\d{1,16}&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="AL\s*\-*\s*\d{1,16}\s*\d{1,16}" RegexOption="IgnoreCase" Result="[match_Data]">
                                                           <sap:WorkflowViewStateService.ViewState>
                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -503,7 +499,7 @@
                                                                             <av:PointCollection x:Key="ConnectorLocation">440,990.3 440,1020.3 440.2,1020.3 440.2,1038.5</av:PointCollection>
                                                                           </scg:Dictionary>
                                                                         </sap:WorkflowViewStateService.ViewState>
-                                                                        <Flowchart DisplayName="Rename &amp; Move" sap:VirtualizedContainerService.HintSize="944,819.2" sap2010:WorkflowViewState.IdRef="Flowchart_4">
+                                                                        <Flowchart DisplayName="Rename &amp; Move" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Flowchart_4">
                                                                           <sap:WorkflowViewStateService.ViewState>
                                                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -765,12 +761,12 @@
                                                       </sap:WorkflowViewStateService.ViewState>
                                                     </ui:IsMatch>
                                                     <FlowStep.Next>
-                                                      <FlowDecision x:Name="__ReferenceID26" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_13">
+                                                      <FlowDecision x:Name="__ReferenceID26" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_13">
                                                         <sap:WorkflowViewStateService.ViewState>
                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                             <av:Point x:Key="ShapeLocation">870.5,516.5</av:Point>
-                                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                             <av:PointCollection x:Key="TrueConnector">870.5,560 870.5,566.5 811,566.5</av:PointCollection>
                                                             <av:PointCollection x:Key="FalseConnector">949.5,560 1000,560</av:PointCollection>
                                                           </scg:Dictionary>
@@ -813,12 +809,12 @@
                                                               </sap:WorkflowViewStateService.ViewState>
                                                             </ui:IsMatch>
                                                             <FlowStep.Next>
-                                                              <FlowDecision x:Name="__ReferenceID28" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
+                                                              <FlowDecision x:Name="__ReferenceID28" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_26">
                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                     <av:Point x:Key="ShapeLocation">1060.5,646.5</av:Point>
-                                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                     <av:PointCollection x:Key="TrueConnector">1060.5,690 1010,690</av:PointCollection>
                                                                     <av:PointCollection x:Key="FalseConnector">1139.5,690 1189.5,690</av:PointCollection>
                                                                   </scg:Dictionary>
@@ -861,12 +857,12 @@
                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                     </ui:IsMatch>
                                                                     <FlowStep.Next>
-                                                                      <FlowDecision x:Name="__ReferenceID31" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_23">
+                                                                      <FlowDecision x:Name="__ReferenceID31" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_23">
                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                             <av:Point x:Key="ShapeLocation">1250.5,776.5</av:Point>
-                                                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                             <av:PointCollection x:Key="TrueConnector">1250.5,820 1180,820</av:PointCollection>
                                                                             <av:PointCollection x:Key="FalseConnector">1329.5,820 1380,820</av:PointCollection>
                                                                           </scg:Dictionary>
@@ -909,12 +905,12 @@
                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                             </ui:IsMatch>
                                                                             <FlowStep.Next>
-                                                                              <FlowDecision x:Name="__ReferenceID36" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
+                                                                              <FlowDecision x:Name="__ReferenceID36" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_21">
                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                     <av:Point x:Key="ShapeLocation">1440.5,896.5</av:Point>
-                                                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                                     <av:PointCollection x:Key="TrueConnector">1440.5,940 1370,940</av:PointCollection>
                                                                                     <av:PointCollection x:Key="FalseConnector">1519.5,940 1569.5,940</av:PointCollection>
                                                                                   </scg:Dictionary>
@@ -957,12 +953,12 @@
                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                     </ui:IsMatch>
                                                                                     <FlowStep.Next>
-                                                                                      <FlowDecision x:Name="__ReferenceID42" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_18">
+                                                                                      <FlowDecision x:Name="__ReferenceID42" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_18">
                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                             <av:Point x:Key="ShapeLocation">1630.5,1016.5</av:Point>
-                                                                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                                             <av:PointCollection x:Key="TrueConnector">1630.5,1060 1580,1060</av:PointCollection>
                                                                                             <av:PointCollection x:Key="FalseConnector">1709.5,1060 1759.5,1060</av:PointCollection>
                                                                                           </scg:Dictionary>
@@ -1005,12 +1001,12 @@
                                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                                             </ui:IsMatch>
                                                                                             <FlowStep.Next>
-                                                                                              <FlowDecision x:Name="__ReferenceID39" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
+                                                                                              <FlowDecision x:Name="__ReferenceID39" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_15">
                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                     <av:Point x:Key="ShapeLocation">1820.5,1146.5</av:Point>
-                                                                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                                                     <av:PointCollection x:Key="TrueConnector">1820.5,1190 1760,1190</av:PointCollection>
                                                                                                     <av:PointCollection x:Key="FalseConnector">1899.5,1190 1929.5,1190 1929.5,1190.5 1949.5,1190.5</av:PointCollection>
                                                                                                   </scg:Dictionary>
@@ -1053,12 +1049,12 @@
                                                                                                       </sap:WorkflowViewStateService.ViewState>
                                                                                                     </ui:IsMatch>
                                                                                                     <FlowStep.Next>
-                                                                                                      <FlowDecision x:Name="__ReferenceID44" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_27">
+                                                                                                      <FlowDecision x:Name="__ReferenceID44" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_27">
                                                                                                         <sap:WorkflowViewStateService.ViewState>
                                                                                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                             <av:Point x:Key="ShapeLocation">2010.5,1276.5</av:Point>
-                                                                                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                                                             <av:PointCollection x:Key="TrueConnector">2010.5,1320 1980.5,1320 1980.5,1320.5 1950,1320.5</av:PointCollection>
                                                                                                             <av:PointCollection x:Key="FalseConnector">2089.5,1320 2129.5,1320</av:PointCollection>
                                                                                                           </scg:Dictionary>
@@ -1101,12 +1097,12 @@
                                                                                                               </sap:WorkflowViewStateService.ViewState>
                                                                                                             </ui:IsMatch>
                                                                                                             <FlowStep.Next>
-                                                                                                              <FlowDecision x:Name="__ReferenceID47" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_29">
+                                                                                                              <FlowDecision x:Name="__ReferenceID47" Condition="[ismatch]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_29">
                                                                                                                 <sap:WorkflowViewStateService.ViewState>
                                                                                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                                                                     <av:Point x:Key="ShapeLocation">2190.5,1406.5</av:Point>
-                                                                                                                    <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                                                                                                    <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                                                                                                     <av:PointCollection x:Key="TrueConnector">2190.5,1450 2130,1450</av:PointCollection>
                                                                                                                     <av:PointCollection x:Key="FalseConnector">2269.5,1450 2299.5,1450 2299.5,1449.5 2319.5,1449.5</av:PointCollection>
                                                                                                                   </scg:Dictionary>
@@ -1323,12 +1319,12 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Start reading page no -&quot;+&quot; &quot;+counter.ToString]" />
                                     <FlowStep.Next>
-                                      <FlowDecision x:Name="__ReferenceID18" Condition="[not Counter=read_Pages]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.2,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                                      <FlowDecision x:Name="__ReferenceID18" Condition="[not Counter=read_Pages]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="78.4,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             <av:Point x:Key="ShapeLocation">480.5,115.5</av:Point>
-                                            <av:Size x:Key="ShapeSize">79.2,87.2</av:Size>
+                                            <av:Size x:Key="ShapeSize">78.4,87.2</av:Size>
                                             <av:PointCollection x:Key="FalseConnector">559.5,159 609.5,159</av:PointCollection>
                                             <av:PointCollection x:Key="TrueConnector">480.5,159 450.5,159 450.5,158.52 430.5,158.52</av:PointCollection>
                                           </scg:Dictionary>
